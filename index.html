@@ -428,8 +428,8 @@
     position: absolute;
     top: 38%;
     left: 50%;
-    width: calc(100vw - 40px);
-    max-width: 380px;
+    width: calc(100vw - 20px);
+    max-width: 420px;
     transform: translate(-50%, -50%);
     pointer-events: all;
     display: flex;
@@ -456,6 +456,17 @@
     position: relative;
     white-space: nowrap;
     line-height: 1.2;
+    animation: shakeBtn 2.5s ease infinite;
+  }
+  @keyframes shakeBtn {
+    0%, 60%, 100% { transform: translateX(0); }
+    65%  { transform: translateX(-6px); }
+    70%  { transform: translateX(6px); }
+    75%  { transform: translateX(-5px); }
+    80%  { transform: translateX(5px); }
+    85%  { transform: translateX(-3px); }
+    90%  { transform: translateX(3px); }
+    95%  { transform: translateX(0); }
   }
   .sticky-cta a::before {
     content: '';
