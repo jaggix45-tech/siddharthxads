@@ -417,60 +417,35 @@
   .sticky-cta {
     display: none;
     position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100vw - 24px);
-    max-width: 440px;
-    z-index: 200;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 20px;
+    background: linear-gradient(0deg, rgba(5,5,5,0.98) 0%, transparent 100%);
+    z-index: 100;
   }
   .sticky-cta a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    display: block;
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     text-align: center;
-    padding: 19px 24px;
+    padding: 15px;
     border-radius: 50px;
     background: linear-gradient(135deg, #ff8c00, #ffd700);
     color: #0a0500;
     font-family: 'Cinzel', serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 1px;
-    box-shadow: 0 4px 40px rgba(255,165,0,0.8), 0 0 60px rgba(255,215,0,0.3);
-    position: relative;
-    white-space: nowrap;
-    line-height: 1.2;
-    animation: shakeBtn 2.5s ease infinite;
-  }
-  @keyframes shakeBtn {
-    0%, 60%, 100% { transform: translateX(0); }
-    65%  { transform: translateX(-6px); }
-    70%  { transform: translateX(6px); }
-    75%  { transform: translateX(-5px); }
-    80%  { transform: translateX(5px); }
-    85%  { transform: translateX(-3px); }
-    90%  { transform: translateX(3px); }
-    95%  { transform: translateX(0); }
-  }
-  .sticky-cta a::before {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 56px;
-    border: 2px dashed rgba(255,215,0,0.5);
-    animation: rotateGlow 3s linear infinite;
-    pointer-events: none;
+    box-shadow: 0 4px 30px rgba(255,165,0,0.6);
   }
 
   @media (max-width: 600px) {
     .sticky-cta { display: block; }
-    .wrapper { padding-bottom: 100px; }
+    .wrapper { padding-bottom: 120px; }
     .cd-unit { min-width: 50px; }
-    .cta-section { display: none; }
   }
 </style>
 </head>
