@@ -417,35 +417,49 @@
   .sticky-cta {
     display: none;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 14px 20px;
-    background: linear-gradient(0deg, rgba(5,5,5,0.98) 0%, transparent 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px);
+    max-width: 400px;
     z-index: 100;
+    pointer-events: none;
   }
   .sticky-cta a {
     display: block;
     width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
     text-align: center;
-    padding: 15px;
+    padding: 18px;
     border-radius: 50px;
-    background: linear-gradient(135deg, #ff8c00, #ffd700);
+    background: linear-gradient(135deg, #ff8c00, #ffd700, #ff8c00);
+    background-size: 200% 100%;
     color: #0a0500;
     font-family: 'Cinzel', serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 1px;
-    box-shadow: 0 4px 30px rgba(255,165,0,0.6);
+    box-shadow: 0 4px 40px rgba(255,165,0,0.7), 0 0 80px rgba(255,215,0,0.3);
+    pointer-events: all;
+    animation: btnPulse 2s ease infinite;
+    position: relative;
+  }
+  .sticky-cta a::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 55px;
+    border: 2px dashed rgba(255,215,0,0.5);
+    animation: rotateGlow 3s linear infinite;
+    pointer-events: none;
   }
 
   @media (max-width: 600px) {
     .sticky-cta { display: block; }
-    .wrapper { padding-bottom: 120px; }
+    .wrapper { padding-bottom: 40px; }
     .cd-unit { min-width: 50px; }
+    /* Hide the inline CTA on mobile so center one is the focus */
+    .cta-section { display: none; }
   }
 </style>
 </head>
