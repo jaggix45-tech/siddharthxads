@@ -426,28 +426,36 @@
   }
   .sticky-cta-inner {
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
     width: calc(100vw - 40px);
     max-width: 380px;
     transform: translate(-50%, -50%);
     pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .sticky-cta a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
     text-align: center;
-    padding: 18px;
+    padding: 16px 20px;
     border-radius: 50px;
     background: linear-gradient(135deg, #ff8c00, #ffd700);
     color: #0a0500;
     font-family: 'Cinzel', serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 1px;
     box-shadow: 0 4px 40px rgba(255,165,0,0.7), 0 0 60px rgba(255,215,0,0.3);
     position: relative;
+    white-space: nowrap;
+    line-height: 1.2;
   }
   .sticky-cta a::before {
     content: '';
