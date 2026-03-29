@@ -417,13 +417,21 @@
   .sticky-cta {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 40px);
-    max-width: 400px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 100;
     pointer-events: none;
+  }
+  .sticky-cta-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100vw - 40px);
+    max-width: 380px;
+    transform: translate(-50%, -50%);
+    pointer-events: all;
   }
   .sticky-cta a {
     display: block;
@@ -431,24 +439,21 @@
     text-align: center;
     padding: 18px;
     border-radius: 50px;
-    background: linear-gradient(135deg, #ff8c00, #ffd700, #ff8c00);
-    background-size: 200% 100%;
+    background: linear-gradient(135deg, #ff8c00, #ffd700);
     color: #0a0500;
     font-family: 'Cinzel', serif;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 1px;
-    box-shadow: 0 4px 40px rgba(255,165,0,0.7), 0 0 80px rgba(255,215,0,0.3);
-    pointer-events: all;
-    animation: btnPulse 2s ease infinite;
+    box-shadow: 0 4px 40px rgba(255,165,0,0.7), 0 0 60px rgba(255,215,0,0.3);
     position: relative;
   }
   .sticky-cta a::before {
     content: '';
     position: absolute;
-    inset: -5px;
-    border-radius: 55px;
+    inset: -6px;
+    border-radius: 56px;
     border: 2px dashed rgba(255,215,0,0.5);
     animation: rotateGlow 3s linear infinite;
     pointer-events: none;
@@ -458,7 +463,6 @@
     .sticky-cta { display: block; }
     .wrapper { padding-bottom: 40px; }
     .cd-unit { min-width: 50px; }
-    /* Hide the inline CTA on mobile so center one is the focus */
     .cta-section { display: none; }
   }
 </style>
@@ -556,7 +560,9 @@
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
-  <a href="https://t.me/+wnIUEjF1-Us1YWQ1" target="_blank" rel="noopener noreferrer">✈️ JOIN FREE TELEGRAM</a>
+  <div class="sticky-cta-inner">
+    <a href="https://t.me/+wnIUEjF1-Us1YWQ1" target="_blank" rel="noopener noreferrer">✈️ JOIN FREE TELEGRAM</a>
+  </div>
 </div>
 
 <script>
